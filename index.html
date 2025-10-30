@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f6f1;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      font-size: 12px;
+      display: block;
+      color: #888;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .header-buttons {
+      display: flex;
+      align-items: center;
+    }
+
+    .phone {
+      margin-right: 15px;
+      color: #555;
+    }
+
+    .btn-primary {
+      background: #c9a67f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .btn-secondary {
+      border: 2px solid #c9a67f;
+      background: transparent;
+      color: #c9a67f;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-left: 10px;
+      font-size: 18px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px;
+      margin-left: 80px;
+      
+    }
+
+    .hero-content {
+      max-width: 500px;
+      
+    }
+
+    .hero-content .tag {
+      color: #c9a67f;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .hero-content h1 {
+      font-size: 50px;
+      margin: 20px 0;
+    }
+
+    .hero-content p {
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    .features {
+      display: flex;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    .features div {
+      margin-right: 30px;
+      text-align: center;
+    }
+
+    .hero-image {
+      position: relative;
+      margin-right: 50px;
+    }
+
+    .hero-image img {
+      width: 950px;
+      border-radius: 12px;
+      height: 700px;
+     
+    }
+
+    .rating {
+      position: absolute;
+      top: 20px;
+      right: 2px;
+      background: white;
+      padding: 3px 5px;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .booking-card {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 200px;
+     
+    }
+
+    .booking-card h4 {
+      margin-bottom: 10px;
+    }
+
+    .booking-card label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .booking-card input {
+      width: 100px;
+      padding: 6px;
+      margin-top: 4px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    .booking-card button {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .gap h1 {
+       margin-top: 20px;
+       line-height: 0.7;
+       font-size: 80px;
+    }
+
+    h4 {
+      font-size: 18px;
+    }
+
+    .star-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      padding: 8px 12px;
+      border-radius: 100px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .star-rating span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+      body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.accommodations {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.accommodations h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.accommodations h2 span {
+  color: #d4a373; /* Gold color */
+}
+
+.accommodations p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+}
+
+.most-popular {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #d4a373;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  padding-left: 5px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d4a373;
+}
+
+.price span {
+  font-size: 14px;
+  color: #666;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.features li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.amenities {
+  margin-bottom: 15px;
+  font-size: 18px;
+  display: flex;
+  gap: 8px;
+}
+
+.book-btn {
+  width: 100%;
+  background: #d4a373;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.book-btn:hover {
+  background: #b88657;
+}
+
+.card .icon-img {
+  width: 20px;
+  height: 50px;
+  object-fit: contain;
+ 
+}
+
+.amenities  {
+   text-align: center;
+   padding: 50px 20px;
+} 
+
+ .amenities  {
+   text-align: center;
+   padding: 60px 20px;
+} 
+
+    span {
+       color: #d4a373; 
+ }
+
+ .task h2 {
+    font-size: 30px;
+ }
+
+ .test {
+    background: white;
+    width: 200px;
+    height: 300px;
+    display: flex;
+ }
+
+ .lean {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fdfcfc;
+    font-family: Arial, sans-serif;
+    color: rgb(10, 10, 10);
+    height: 100px;
+ }
+
+ .lean ul {
+    padding-right: 20px;
+ }
+
+ button {
+    border-radius: 8px;
+    padding: 6px 10px;
+ }
+
+ .fools {
+    background: rgb(248, 247, 247);
+    width: 100%;
+    height: 100%;
+ }
+
+ img {
+    width: 593px;
+    height: 400px;
+    padding-left: 3px;
+    margin-top: 2px;
+    border-radius: 15px;
+    
+ }
+
+ .container {
+    background-color: rgb(252, 249, 249);
+    width: 600px;
+    height: 700px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px gray; 
+    
+ }
+
+ .parent {
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+   margin-top: 20px;
+   align-items: flex-start;
+   text-align: center;
+ }
+
+ .big-container {
+        width: 100%;
+        height: 600px;
+        border: 2px solid #fdfcfc;
+        margin: 50px auto;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 125px;
+    }
+
+    .small-box {
+        width: 427px;
+        height: 230px;
+        background: #fdfcfc;
+        box-shadow: 5px 5px 10px gray; 
+        border-radius: 7px;
+    }
+
+    .box {
+        width: 1600px;
+        height: 300px;
+        background-color:  #f7eadd;
+        box-shadow: 5px 5px 10px gray;
+        justify-content: center;
+        text-align: center;
+        align-items: center; 
+        margin: 30px auto;
+        padding-top: 20px;
+    }
+
+    h3 {
+        margin-top: 145px;
+        padding: 1px 150px;
+    }
+
+    h4 {
+        padding: 2px 55px;
+        margin-top: 1px;
+        color: #e9aa6b;
+    }
+
+    .top-box {
+        width: 60px;
+        height: 60px;
+        background-color:  #fff;
+        border: 2px solid #333;
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 170px;
+        border-radius: 10px;
+    }
+
+    .top-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 7px;
+    }
+
+    button {
+        background-color: #e9aa6b;
+        padding: 10px 20px;
+        border-radius: 8px;
+        color: white;
+        border: none;
+    }
+
+    h1 {
+      font-weight: bold;
+    }
+</style>
+<body>
+     <header class="navbar">
+    <div class="logo">Luxe <span>BOUTIQUE HOTEL</span></div>
+    <nav>
+      <a href="#">Rooms & Suites</a>
+      <a href="#">Amenities</a>
+      <a href="#">Dining</a>
+      <a href="#">Experience</a>
+      <a href="#">Location</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="header-buttons">
+      <a href="tel:+234900000000" class="phone">+234 900 000 0000</a>
+      <button class="btn-primary">Book Now</button>
+    </div>
+  </header>
+
+  
+  <section class="hero">
+    <div class="hero-content">
+     <div class="star-rating">
+      <span class="tag">★★★★★ 5-Star Luxury</span>
+     </div>  
+   
+   <div class="gap">    
+      <h1 style="color:  #c9a67f">Luxury </h1>
+    </div>  
+   <div class="gap"> 
+      <h1><strong>Redefined</strong></h1>
+    </div> 
+
+
+<p>Experience unparalleled elegance in the heart of Lagos. Where sophisticated design meets exceptional service.</p>
+      <div class="buttons">
+        <button class="btn-primary">Book Your Stay</button>
+        <button class="btn-secondary">Virtual Tour</button>
+      </div>
+      <div class="features">
+        <div><strong>150+</strong><p>Luxury Suites</p></div>
+        <div><strong>24/7</strong><p>Concierge</p></div>
+        <div><strong>98%</strong><p>Guest Satisfaction</p></div>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="image/luxury.jpg"> 
+      <div class="rating"><strong>4.9</strong><br> ★★★★★<br> <span>2,847 Reviews</span></div>
+      <div class="booking-card">
+        <h4>Quick Booking</h4>
+        <label>Check-in &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Today</label>
+        <label>Check-out  &nbsp; Tomorrow</label>
+        <label>Guests: <input type="number" id="guests" min="1" value="2"></label>
+        <button class="btn-primary" onclick="checkAvailability()">Check Availability</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function checkAvailability() {
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+      const guests = document.getElementById("guests").value;
+
+      if (!checkin || !checkout) {
+        alert("Please select check-in and check-out dates.");
+        return;
+      }
+
+      alert(\Booking Details:\nCheck-in: \${checkin}\nCheck-out: \${checkout}\nGuests: \${guests}\);
+    }
+  </script>
+
+  <section class="accommodations">
+  <h2><span>Exceptional</span> Accommodations</h2>
+  <p>Choose from our carefully curated selection of luxurious suites, each designed to provide the ultimate comfort experience.</p>
+
+  <div class="cards">
+    <!-- Deluxe Suite -->
+    <div class="card">
+      <div class="card-image">
+        <img src="image/hotelbed.jpg" alt="Deluxe Suite">
+        <div class="card-info">
+          <span>👥</span>
+          <span> 2 Guests</span>
+          <span>45 sqm</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Deluxe Suite</h3>
+        <p class="price">₦280,000 <span>per night</span></p>
+        <div class="features">
+          <ul>
+            <li>King Bed</li>
+            <li>City View</li>
+            <li>Free WiFi</li>
+            <li>Mini Bar</li>
+          </ul>
+        </div>
+        <div class="amenities">
+          <span>🛏️</span><span>🍷</span><span>📺</span><span></span>
+        </div>
+        <button class="book-btn">Book This Suite →</button>
+      </div>
+    </div>
+
+    <!-- Executive Suite -->
+    <div class="card">
+      <div class="card-image">
+        <img src="image/frames.jpg" alt="Executive Suite">
+        <div class="most-popular">Most Popular</div>
+        <div class="card-info">
+          <span> 👥 3 Guests</span>
+          <span>65 sqm</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Executive Suite</h3>
+        <p class="price">₦450,000 <span>per night</span></p>
+        <div class="features">
+          <ul>
+            <li>Separate Living Area</li>
+            <li>Ocean View</li>
+            <li>Premium WiFi</li>
+            <li>Complimentary Breakfast</li>
+          </ul>
+        </div>
+        <div class="amenities">
+          <span>🛋️</span><span>🍷</span><span>📺</span><span>📶</span>
+        </div>
+        <button class="book-btn">Book This Suite →</button>
+      </div>
+    </div>
+
+    <!-- Presidential Suite -->
+    <div class="card">
+      <div class="card-image">
+        <img src="image/furnitures.jpg" alt="Presidential Suite">
+        <div class="card-info">
+          <span>👥 4 Guests</span>
+          <span>120 sqm</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Presidential Suite</h3>
+        <p class="price">₦850,000 <span>per night</span></p>
+        <div class="features">
+          <ul>
+            <li>Private Terrace</li>
+            <li>Butler Service</li>
+            <li>Jacuzzi</li>
+            <li>Panoramic Views</li>
+          </ul>
+        </div>
+        <div class="amenities">
+          <span>🛋️</span><span>🍷</span><span>📺</span><span>📶</span>
+        </div>
+        <button class="book-btn">Book This Suite →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="fools">
+<div class="amenities">
+ <div class="task">
+    <h2>Unparalled <span> Luxury</span></h2>
+ </div>   
+
+    <p><span>Discover a collection of premium amenities designed to be exceed your <br>
+    expectations and create unforgettable experiences</span></p>
+</div>
+
+<div class="parent">
+<div class="container">
+<img src="image/woman.jpg" width="250px">
+
+<p><span>Rejunevate your body and mind at our world-class spa facility
+featuring traditional and modern welliness treatments. </span>   
+</p>
+
+<div class="lean">
+<ul>
+    <li>Full-Service Spa</li><br>
+    <li>Wellness Programs</li><br>
+</ul>    
+   
+<ul>
+    <li>traditional Massages</li><br>
+    <li>Meditation Garden</li>
+   
+</ul>
+
+<div class="best">
+<button>Learn More &#8594</button>
+</div>
+</div>
+</div>   
+
+
+
+
+<div class="container">
+<img src="image/suite.jpg" width="250px">
+
+<p><span>Experience culinry excellence with our award-winning fearuring<br>
+international and local Nigeria cuisine </span>   
+</p>
+
+<div class="lean">
+<ul>
+    <li>3 Signature Restaurants</li><br>
+    <li>Private Chef Avalable</li><br>
+</ul>    
+   
+<ul>
+    <li>24/7 Room Service</li><br>
+    <li>Wine Cellar</li>
+   
+</ul>
+
+<div class="best">
+<button>Learn More &#8594</button>
+</div>
+</div>
+</div>   
+</div>
+</div>
+</div>
+
+<div class="big-container">
+        <div class="small-box">
+            <div class="top-box">
+                <img src="image/poolllllll.jpg">
+            </div>
+            <h3>Infinity Pool</h3>
+            <h4>Rooftop infinity pool with stunning city views</h4>
+        </div>
+        <div class="small-box">
+            <div class="top-box">
+                <img src="image/gymmmm.jpg">
+            </div>
+            <h3>Fitness Center</h3>
+            <h4>Start-off-the-art gym personal trainers</h4>
+        </div>
+        <div class="small-box">
+            <div class="top-box">
+                <img src="image/carrrr.jpg">
+            </div>
+            <h3>Valet Parking</h3>
+            <h4>Complimentary valet services for all guests</h4>
+        </div>
+        <div class="small-box">
+            <div class="top-box">
+                <img src="image/wifiiiiii.jpg">
+            </div>
+            <h3>High-Speed</h3>
+            <h4>Complimentary ultra-fast internet throughout</h4>
+        </div>
+        <div class="small-box">
+            <div class="top-box">
+                <img src="image/shieldddd.jpg">
+            </div>
+            <h3>24/7 Security</h3>
+            <h4>Round-the-clock security and survelliance</h4>
+        </div>
+        <div class="small-box">
+            <div class="top-box">
+                <img src="image/clockkkkk.jpg">
+            </div>
+            <h3>Conclergeservices</h3>
+            <h4>Personal Conclerge for all your needs</h4>
+        </div>
+        <div class="small-box">
+            <div class="top-box">
+                <img src="image/people icon.jpg">
+            </div>
+            <h3>Event Spaces</h3>
+            <h4>Premium venues for meetings and celebrations</h4>
+        </div>
+        <div class="small-box">
+            <div class="top-box">
+                <img src="image/cupppppp.jpg">
+            </div>
+            <h3>BusinessLounge</h3>
+            <h4>Executive lounge meetings facilities</h4>
+        </div>
+    </div><br><br><br><br>
+
+<div class="box">
+    <h1>Ready to Experince Luxury?</h1>
+   
+    <h3>Book your stay today and discover why guests choose<br>
+    Luxe for unforgettable experiences</h3>
+    
+    <button>Book Your Stay &#8594</button>
+</div>    
+
+</body>
+</html>
